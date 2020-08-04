@@ -7,14 +7,17 @@ import {
 } from "react-router-dom";
 
 import { LoginPage } from './Page/Login/index'
-
+import { HomePage } from './Page/HomePage/index'
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <LoginPage />
+          </Route>
+          <Route path="/home">
+            <HomePage />
           </Route>
 
         </Switch>
