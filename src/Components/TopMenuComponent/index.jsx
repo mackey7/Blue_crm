@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentWrapper, Logo, UserSection, ManagementMenu, ButtonAdd, ButtonSearch, SearchInput, ButtonNotific, UserIcon, ArrowIcon, Hamburger, NotificationMenu, UserSectionMenu } from '../../Helpers/Styles/TopMenuComponent/index'
-
+import app from '../../base'
 export const TopMenuComponent = () => {
     const [open, setOpen] = useState(false);
     const [sectionMenuOpen, setSectionMenuOpen] = useState(false);
@@ -48,7 +48,9 @@ export const TopMenuComponent = () => {
                 <UserSectionMenu MenuOpen={sectionMenuOpen}>
                     <li>Settings</li>
                     <li>menu</li>
-                    <li>LogOut</li>
+                    <li>
+                        <span onClick={() => app.auth().singOut()}> LogOut </span>
+                    </li>
                 </UserSectionMenu>
             </ManagementMenu>
 
