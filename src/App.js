@@ -8,6 +8,7 @@ import {
 import { AuthProvider } from './Components/Auth/index'
 import { LoginPage } from './Page/Login/index'
 import { HomePage } from './Page/HomePage/index'
+import SignUp from './Components/SignUp'
 import PrivateRoute from './Components/PrivateRoute/index.js'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <div>
           <PrivateRoute exact path="/" component={HomePage} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/signup" component={SignUp} />
         </div>
       </Router>
     </AuthProvider>
