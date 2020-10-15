@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Chart from 'react-apexcharts'
-
+import app from '../../../base'
 
 export class IncomeChartComponent extends Component {
     constructor(props) {
@@ -34,6 +34,8 @@ export class IncomeChartComponent extends Component {
                     type="bar"
                     width="500"
                 />
+
+
             </div >
         )
     }

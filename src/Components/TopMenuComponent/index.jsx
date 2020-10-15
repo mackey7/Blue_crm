@@ -33,6 +33,7 @@ export const TopMenuComponent = () => {
                 <div></div>
             </Hamburger>
             <ManagementMenu open={open}>
+                <button onClick={() => app.auth().signOut()}>Sign out</button>
                 <ButtonAdd>Add <i className="fa fa-plus"></i></ButtonAdd>
                 <ButtonSearch onClick={HandleSearchClick} className="fa fa-search"></ButtonSearch>
                 <SearchInput SearchOpen={SearchOpen} ></SearchInput>
@@ -46,6 +47,8 @@ export const TopMenuComponent = () => {
                     <ArrowIcon className="fa fa-arrow-down"></ArrowIcon>
                 </UserSection>
                 <UserSectionMenu MenuOpen={sectionMenuOpen}>
+                    <button onClick={() => app.auth().signOut()}>Sign out</button>
+
                     <li>Settings</li>
                     <li>menu</li>
                     <li>
@@ -54,6 +57,6 @@ export const TopMenuComponent = () => {
                 </UserSectionMenu>
             </ManagementMenu>
 
-        </ComponentWrapper>
+        </ComponentWrapper >
     )
 }

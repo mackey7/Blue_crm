@@ -169,7 +169,7 @@ export const UserSectionMenu = Styled.ul`
 @media(min-width: 468px) {
     width:200px;
     height:100%;
-
+z-index:9999;
     position: absolute;
     top: 30px;
     right:10px;
