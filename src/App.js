@@ -13,6 +13,7 @@ import PrivateRoute from './Components/PrivateRoute/index.js'
 import { ChartsPage } from './Page/Charts'
 import { ClientsPage } from './Page/Clients'
 import { CalendarPage } from './Page/Calendar'
+import { TasksPage } from './Page/Tasks'
 function App() {
   return (
     <AuthProvider>
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/charts" component={ChartsPage} />
           <Route exact path="/clients" component={ClientsPage} />
           <Route exact path="/calendar" component={CalendarPage} />
+          <Route exact path="/tasks" component={TasksPage} />
         </div>
       </Router>
     </AuthProvider>
