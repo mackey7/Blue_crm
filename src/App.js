@@ -12,7 +12,7 @@ import SignUp from './Components/SignUp'
 import PrivateRoute from './Components/PrivateRoute/index.js'
 import { ChartsPage } from './Page/Charts'
 import { ClientsPage } from './Page/Clients'
-
+import { CalendarPage } from './Page/Calendar'
 function App() {
   return (
     <AuthProvider>
@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/charts" component={ChartsPage} />
           <Route exact path="/clients" component={ClientsPage} />
+          <Route exact path="/calendar" component={CalendarPage} />
         </div>
       </Router>
     </AuthProvider>
