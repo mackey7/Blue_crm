@@ -11,6 +11,8 @@ import { HomePage } from './Page/HomePage/index'
 import SignUp from './Components/SignUp'
 import PrivateRoute from './Components/PrivateRoute/index.js'
 import { ChartsPage } from './Page/Charts'
+import { ClientsPage } from './Page/Clients'
+
 function App() {
   return (
     <AuthProvider>
@@ -20,6 +22,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/charts" component={ChartsPage} />
+          <Route exact path="/clients" component={ClientsPage} />
         </div>
       </Router>
     </AuthProvider>
