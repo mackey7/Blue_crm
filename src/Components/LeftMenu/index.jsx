@@ -10,6 +10,8 @@ export const LeftMenuComponent = () => {
             <Link to="/charts"> <Icon className="fa fa-bar-chart-o"></Icon></Link>
             <Link to="/clients"><Icon className="fa fa-users"></Icon></Link>
             <Link to="/calendar"><Icon className="fa fa-calendar"></Icon></Link>
+            <Link to="/costs"> <Icon className="fa fa-usd" aria-hidden="true"></Icon></Link>
+
 
 
         </Wrapper >
