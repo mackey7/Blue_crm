@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 
 } from "react-router-dom";
@@ -14,6 +13,9 @@ import { ChartsPage } from './Page/Charts'
 import { ClientsPage } from './Page/Clients'
 import { CalendarPage } from './Page/Calendar'
 import { TasksPage } from './Page/Tasks'
+import { CostsPage } from './Page/Costs'
+
+
 function App() {
   return (
     <AuthProvider>
@@ -26,6 +28,7 @@ function App() {
           <Route exact path="/clients" component={ClientsPage} />
           <Route exact path="/calendar" component={CalendarPage} />
           <Route exact path="/tasks" component={TasksPage} />
+          <Route exact path="/costs" component={CostsPage} />
         </div>
       </Router>
     </AuthProvider>
