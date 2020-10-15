@@ -5,9 +5,9 @@ export const LeftMenuComponent = () => {
     return (
         <Wrapper>
             <Link to="/">  <Icon className="fa fa-home"></Icon></Link>
-            <Link to="/charts">  <Icon className="fa fa-home"></Icon></Link>
+            <Link to="/charts"> <Icon className="fa fa-bar-chart-o"></Icon></Link>
 
-            <Icon className="fa fa-bar-chart-o"></Icon>
+
             <Icon className="fa fa-users"></Icon>
             <Icon className="fa fa-calendar"></Icon>
 
