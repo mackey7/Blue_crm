@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { TaskItem } from './TaskItem'
 
 export const TasksList = () => {
     return (
         <div>
-            TasksList
+            <TaskItem />
         </div>
     )
 }
