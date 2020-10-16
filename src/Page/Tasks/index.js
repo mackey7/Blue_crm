@@ -2,7 +2,7 @@ import React from 'react'
 import { TopMenuComponent } from '../../Components/TopMenuComponent/index'
 import { LeftMenuComponent } from '../../Components/LeftMenu/index'
 import { Content, RightSide } from '../../Helpers/Styles/HomePage/index'
-
+import { TasksComponent } from '../../Components/TasksComponent'
 
 export const TasksPage = () => {
     return (
@@ -12,7 +12,7 @@ export const TasksPage = () => {
             <Content>
                 <LeftMenuComponent />
                 <RightSide>
-                    Tasks
+                    <TasksComponent />
                 </RightSide>
             </Content>
         </div >
