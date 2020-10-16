@@ -1,16 +1,16 @@
 import React from 'react'
-
+import { Wrapper, Content } from '../../Helpers/Styles/TasksComponent/TaskItem'
 export const TaskItem = () => {
     return (
-        <article>
+        <Wrapper>
 
             <input type="checkbox" name="task" value="task" />
 
 
-            <div>
+            <Content>
                 <h4>Tytuł taska</h4>
                 <p>Opis taska</p>
-            </div>
-        </article>
+            </Content>
+        </Wrapper>
     )
 }

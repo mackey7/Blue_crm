@@ -7,6 +7,9 @@ export const TasksList = () => {
     return (
         <Wrapper>
             <TaskItem />
+            <TaskItem />
+            <TaskItem />
+            <TaskItem />
         </Wrapper>
     )
 }
