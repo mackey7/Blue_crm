@@ -1,9 +1,10 @@
 import React from 'react'
+import { Wrapper } from '../../Helpers/Styles/ClientsComponent/ClientsList'
 
 export const ClientsList = () => {
     return (
-        <div>
+        <Wrapper>
             ClientsList
-        </div>
+        </Wrapper>
     )
 }
