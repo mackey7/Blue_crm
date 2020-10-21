@@ -1,19 +1,17 @@
 import React from 'react'
-
+import { Wrapper, Form } from '../../Helpers/Styles/CostsComponent/AddCost'
 export const AddCost = () => {
     return (
-        <div>
-            <form >
+        <Wrapper>
+            <Form >
                 <label for="name">name:</label>
-                <input type="text" id="name" name="name" />
+                <input type="text" id="name" name="name" placeholder="name" />
                 <label for="category">category:</label>
-                <input type="text" id="category" name="category" />
-                <label for="category">category:</label>
-                <input type="text" id="category" name="category" />
+                <input type="text" id="category" name="category" placeholder="category" />
                 <label for="amount">amount:</label>
-                <input type="text" id="amount" name="amount" />
+                <input type="text" id="amount" name="amount" placeholder="amount" />
                 <input type="submit" value="ADD" />
-            </form>
-        </div>
+            </Form>
+        </Wrapper>
     )
 }
