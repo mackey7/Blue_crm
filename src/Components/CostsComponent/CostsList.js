@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { Wrapper, Table, DeleteBtn } from '../../Helpers/Styles/CostsComponent/CostsList'
 export const CostsList = () => {
     return (
-        <section>
-            <table>
+        <Wrapper>
+            <Table>
                 <thead>
                     <tr>
                         <th>Name</th> <th>category</th> <th>Amount</th>  <th>Delete</th>
@@ -11,28 +11,28 @@ export const CostsList = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <i className="fa fa-trash" aria-hidden="true"></i></td>
+                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
 
                     </tr>
                     <tr>
-                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <i className="fa fa-trash" aria-hidden="true"></i></td>
+                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
 
                     </tr>
                     <tr>
-                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <i className="fa fa-trash" aria-hidden="true"></i></td>
+                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
 
                     </tr>
                     <tr>
-                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <i className="fa fa-trash" aria-hidden="true"></i></td>
+                        <td>gasoline</td> <td>Car</td>  <td>30</td> <td> <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
 
                     </tr>
 
 
                 </tbody>
-            </table>
+            </Table>
 
 
 
-        </section>
+        </Wrapper>
     )
 }
