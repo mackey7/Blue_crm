@@ -1,7 +1,13 @@
 import React from 'react'
 import { AddCost } from './AddCost'
+import { CostsList } from './CostsList'
+
 export const CostsComponent = () => {
     return (
-        <div><AddCost /></div>
+        <div>
+            <AddCost />
+
+            <CostsList />
+        </div>
     )
 }
