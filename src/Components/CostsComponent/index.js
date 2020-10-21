@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { AddCost } from './AddCost'
 export const CostsComponent = () => {
     return (
-        <div>CostsComponent</div>
+        <div><AddCost /></div>
     )
 }

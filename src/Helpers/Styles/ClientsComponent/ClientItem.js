@@ -42,7 +42,7 @@ export const Table = Styled.table`
                  font-weight:500;
 
                  &:nth-child(odd){
-background: #CCC
+                        background: #CCC
 
                  }
                                 td{
