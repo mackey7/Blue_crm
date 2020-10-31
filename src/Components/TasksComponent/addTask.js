@@ -4,10 +4,10 @@ export const AddTask = () => {
     return (
         <ContainerWrapper>
             <Form >
-                <label for="fname">Title:</label>
+                <label htmlFor="Title">Title:</label>
                 <input type="text" id="Title" name="Title" />
-                <label for="lname">Description</label>
-                <textarea id="w3review" name="w3review" rows="4" cols="50" />
+                <label htmlFor="Description">Description</label>
+                <textarea id="Description" name="Description" rows="4" cols="50" />
                 <AddBtn type="submit" value="ADD" />
             </Form>
         </ContainerWrapper>

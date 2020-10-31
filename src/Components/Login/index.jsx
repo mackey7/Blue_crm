@@ -35,10 +35,10 @@ const LoginComponent = ({ history }) => {
             <LoginContainer>
                 <FormContainer onSubmit={handleLogin}>
                     <h2>Login In</h2>
-                    <label for="email"><b>Username</b></label>
+                    <label htmlFor="email"><b>Username</b></label>
 
                     <input name="email" type="email" placeholder="Email" />
-                    <label for="password"><b>Password</b></label>
+                    <label htmlFor="password"><b>Password</b></label>
                     <input name="password" type="password" placeholder="Password" />
                     <button type="submit" class="cancelbtn">LOG IN</button>
 
