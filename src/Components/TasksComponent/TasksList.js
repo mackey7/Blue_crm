@@ -21,7 +21,7 @@ export const TasksList = () => {
     return (
         <Wrapper>
             {tasks.map(task => (
-                <p><TaskItem key={task.id} taskstData={task} /></p>
+                <TaskItem key={task.id} taskstData={task} />
             ))}
 
 
