@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Wrapper, Table } from '../../Helpers/Styles/ClientsComponent/ClientsList'
+import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
 import { ClientItem } from './ClientItem'
 import app from '../../base'
 
@@ -15,13 +15,14 @@ export const ClientsList = () => {
         };
         fetchData();
     }, []);
+    const clientsMap = clients.map(client => (
+        <p><ClientItem key={client.id} clientData={client} /></p>
+    ))
+
+    const conditionalRender = clients.length > 0 ? clientsMap : <CenterRow> You don`t have a client </CenterRow>
 
     return (
         <Wrapper>
-
-
-
-
             <Wrapper>
                 <Table>
                     <thead>
@@ -30,17 +31,9 @@ export const ClientsList = () => {
                         </tr>
                     </thead>
                     <tbody>
-
-                        {clients.map(client => (
-                            <p><ClientItem key={client.id} clientData={client} /></p>
-                        ))}
-
-
+                        {conditionalRender}
                     </tbody>
                 </Table>
-
-
-
             </Wrapper>
         </Wrapper>
     )
