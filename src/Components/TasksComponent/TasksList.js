@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { TaskItem } from './TaskItem'
 import { Wrapper } from '../../Helpers/Styles/TasksComponent/TasksList'
+import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
 import app from '../../base'
 
 
@@ -16,15 +17,15 @@ export const TasksList = () => {
         };
         fetchData();
     }, []);
+    const mapTasks = tasks.map(task => (
+        <TaskItem key={task.id} taskstData={task} />
+    ))
 
+    const condidtionalRender = tasks.length > 0 ? mapTasks : <CenterRow> no tasks </CenterRow>
 
     return (
         <Wrapper>
-            {tasks.map(task => (
-                <TaskItem key={task.id} taskstData={task} />
-            ))}
-
-
+            {condidtionalRender}
         </Wrapper>
     )
 }
