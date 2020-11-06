@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
-import { ComponentWrapper, LoginContainer, FormContainer, Logo } from '../../Helpers/Styles/Login/Login'
+import { TipContainer, ComponentWrapper, LoginContainer, FormContainer, Logo } from '../../Helpers/Styles/Login/Login'
 import app from '../../base'
 import { AuthContext } from "../Auth/index";
 
@@ -35,6 +35,7 @@ const LoginComponent = ({ history }) => {
             <LoginContainer>
                 <FormContainer onSubmit={handleLogin}>
                     <h2>Login In</h2>
+
                     <label htmlFor="email"><b>Username</b></label>
 
                     <input name="email" type="email" placeholder="Email" />
@@ -43,7 +44,10 @@ const LoginComponent = ({ history }) => {
                     <button type="submit" class="cancelbtn">LOG IN</button>
 
                 </FormContainer>
-                <div> Forget Password?</div>
+                <TipContainer>
+                    <p> login: testowo@test.pl </p>
+                    <p>password: test123</p>
+                </TipContainer>
             </LoginContainer>
 
         </ComponentWrapper>)

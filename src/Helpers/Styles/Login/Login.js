@@ -25,13 +25,7 @@ export const LoginContainer = Styled.div`
 border: 2px solid #515461;
 background:#2f3242;
 border-radius: 5px;
-div{
-    width: 100 %;
-    padding: 20px 0px;
-    background:#434656;
-    text-align: center;
-    color:#fff;
-}
+
 `
 
 
@@ -65,5 +59,19 @@ button{
     :hover{
         background:#2196f3;
     }
+}
+
+`
+
+export const TipContainer = Styled.div`
+padding: 10px;
+margin: 10px ;
+color: #000;
+font-size:15px;
+background-color:rgba(255,238,0102,0.9);
+border:1px solid #fff;
+ p {
+    padding:0;
+    margin:0;
 }
 `
