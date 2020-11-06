@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TaskItem } from './TaskItem'
 import { Wrapper } from '../../Helpers/Styles/TasksComponent/TasksList'
 import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
@@ -8,8 +8,8 @@ import app from '../../base'
 
 
 export const TasksList = () => {
-    const [tasks, setTask] = React.useState([])
-    React.useEffect(() => {
+    const [tasks, setTask] = useState([])
+    useEffect(() => {
         const fetchData = async () => {
             const db = app.firestore();
             const data = await db.collection("tasks").get();

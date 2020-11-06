@@ -1,9 +1,19 @@
 import React from 'react'
 import { Wrapper, Content, DeleteBtn, Row } from '../../Helpers/Styles/TasksComponent/TaskItem'
-export const TaskItem = taskstData => {
+import app from '../../base'
 
+
+export const TaskItem = taskstData => {
+    function deleteItem(e) {
+        app.firestore()
+            .collection('tasks')
+            .doc(e.target.getAttribute("data-id"))
+            .delete()
+
+
+    }
     return (
-        <Wrapper>
+        <Wrapper >
             <Row>
                 <input type="checkbox" name="task" value="task" />
                 <Content>
@@ -11,7 +21,7 @@ export const TaskItem = taskstData => {
                     <p>{taskstData.taskstData.description}</p>
                 </Content>
             </Row>
-            <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn>
-        </Wrapper>
+            <DeleteBtn data-id={taskstData.taskstData.id} onClick={(e) => deleteItem(e)} className="fa fa-trash" aria-hidden="true"></DeleteBtn>
+        </Wrapper >
     )
 }
