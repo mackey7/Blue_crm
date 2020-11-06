@@ -15,9 +15,18 @@ export const CostsList = () => {
         fetchData();
     }, []);
 
+    function deleteItem(e) {
+        app.firestore()
+            .collection('costs')
+            .doc(e.target.getAttribute("data-id"))
+            .delete()
+
+    }
+
+
     const mapCost = costs.map(cost => (
         <tr>
-            <td>{cost.name}</td> <td>{cost.category}</td>  <td>{cost.Amount}</td> <td> <DeleteBtn className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
+            <td >{cost.name}</td> <td>{cost.category}</td>  <td>{cost.Amount}</td> <td> <DeleteBtn onClick={e => deleteItem(e)} data-id={cost.id} className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
 
         </tr>
     ))
