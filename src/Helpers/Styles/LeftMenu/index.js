@@ -4,6 +4,7 @@ import Styled from 'styled-components'
 export const Wrapper = Styled.nav`
     background:#2f3242;
     min-height:100vh;
+    height:100%;
     width:40px;
     display:flex;
     flex-direction:column;

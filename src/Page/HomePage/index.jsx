@@ -2,7 +2,7 @@ import React from 'react';
 import { TopMenuComponent } from '../../Components/TopMenuComponent/index'
 import { LeftMenuComponent } from '../../Components/LeftMenu/index'
 import { Content, RightSide } from '../../Helpers/Styles/HomePage/index'
-import { IncomeChartComponent } from '../../Components/HomeComponent/IncomeChartComponent/index'
+import { Dashboard } from '../../Components/HomeComponent/index'
 export const HomePage = () => {
     return (
         <div>
@@ -11,7 +11,7 @@ export const HomePage = () => {
             <Content>
                 <LeftMenuComponent />
                 <RightSide>
-                    <IncomeChartComponent />
+                    <Dashboard />
                 </RightSide>
             </Content>
         </div >

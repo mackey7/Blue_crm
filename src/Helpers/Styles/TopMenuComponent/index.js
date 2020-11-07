@@ -169,7 +169,7 @@ export const UserSectionMenu = Styled.ul`
 @media(min-width: 468px) {
     width:200px;
     height:100%;
-z-index:9999;
+    z-index:9999;
     position: absolute;
     top: 30px;
     right:10px;
@@ -220,13 +220,13 @@ export const SearchInput = Styled.input`
     border:1px solid #000;
     border-radius:5px;
     width:100%;
-@media(min-width: 468px) {
-    width:200px;
-    height:100%;
-    border:0px;
-    position: relative;
-    top: 0px;
-    border-radius:none;
+    @media(min-width: 468px) {
+        width:200px;
+        height:100%;
+        border:0px;
+        position: relative;
+        top: 0px;
+        border-radius:none;
 
-}
+    }
 `
