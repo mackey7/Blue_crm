@@ -4,7 +4,7 @@ import Styled from 'styled-components'
 export const Wrapper = Styled.article`
 display:flex;
 background: ${props => props.isDone ? "#f86a6a" : "#fff"};
-/* background:#fff; */
+
 flex-direction:row;
 justify-content:space-between;
 align-items:center;

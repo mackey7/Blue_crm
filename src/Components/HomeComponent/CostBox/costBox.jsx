@@ -27,6 +27,7 @@ export const CostBox = () => {
 
     return (
         <Wrapper>
+            <h2>Costs</h2>
             <Table>
                 <thead>
                     <tr>

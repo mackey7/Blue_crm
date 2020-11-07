@@ -5,7 +5,7 @@ max-width:30%;
 max-height:100%;
 background:rgba(255, 255, 255, 0.7);
 padding:30px;
-margin-top:50px;
+margin:10px;
 `
 
 export const Table = Styled.table`
