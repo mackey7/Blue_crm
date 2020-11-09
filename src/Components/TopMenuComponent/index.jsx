@@ -33,24 +33,11 @@ export const TopMenuComponent = () => {
                 <div></div>
             </Hamburger>
             <ManagementMenu open={open}>
-
-                <ButtonAdd>Add <i className="fa fa-plus"></i></ButtonAdd>
-                <ButtonSearch onClick={HandleSearchClick} className="fa fa-search"></ButtonSearch>
-                <SearchInput SearchOpen={SearchOpen} ></SearchInput>
-                <ButtonNotific onClick={HandleNotificationClick} className="fa fa-bell-o"></ButtonNotific>
-                <NotificationMenu NotoficationOpen={NotoficationOpen}>
-                    <li>Notofication</li>
-                    <li>Notofication</li>
-                </NotificationMenu>
                 <UserSection onClick={HandleMenuClick}>
                     <UserIcon src="../../Images/user-img.jpg" alt="User image" />
                     <ArrowIcon className="fa fa-arrow-down"></ArrowIcon>
                 </UserSection>
                 <UserSectionMenu MenuOpen={sectionMenuOpen}>
-
-
-                    <li>Settings</li>
-                    <li>menu</li>
                     <li>
                         <span onClick={() => firebase.auth().signOut()}> LogOut </span>
                     </li>
