@@ -38,8 +38,7 @@ export const ManagementMenu = Styled.section`
               padding:0px;
               min-width:100px;
               max-width:100%;
-              height:100%;
-              
+              height:100%;   
       }
 `
 
@@ -141,7 +140,7 @@ export const UserSectionMenu = Styled.ul`
         z-index:9999;
         position: absolute;
         top: 30px;
-        left:-70px;
+        right:30px;
         border-radius:5px;
         padding:5px 5px;
     }
