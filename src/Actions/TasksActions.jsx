@@ -1,5 +1,5 @@
 import { ADD_TASK } from './actions_types/index'
-import app from '../../base'
+import app from '../base'
 
 
 

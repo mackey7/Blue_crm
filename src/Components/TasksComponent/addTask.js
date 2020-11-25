@@ -1,24 +1,33 @@
 import React, { useState } from 'react'
+import { useDispatch } from "react-redux";
+import { AddTask } from "../../Actions/TasksActions";
 import { ContainerWrapper, Form, AddBtn } from '../../Helpers/Styles/TasksComponent/addTask'
-import app from '../../base'
-export const AddTask = () => {
+// import app from '../../base'
+export const AddTaskComponent = () => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
-    function onSubmit(e) {
+    const dispatch = useDispatch();
+    const createTaskAction = (post) => dispatch(AddTask(post));
+
+    const onSubmit = async (e) => {
         e.preventDefault()
-        app
-            .firestore()
-            .collection('tasks')
-            .add({
-                title,
-                description,
-                isDone: false
-            })
-            .then(() => {
-                setTitle('')
-                setDescription('')
-            })
+        let task = {
+            title, description, isDone: false
+        }
+        await createTaskAction(task)
+        // app
+        //     .firestore()
+        //     .collection('tasks')
+        //     .add({
+        //         title,
+        //         description,
+        //         isDone: false
+        //     })
+        //     .then(() => {
+        //         setTitle('')
+        //         setDescription('')
+        //     })
     }
 
     return (
