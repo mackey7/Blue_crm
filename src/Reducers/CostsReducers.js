@@ -1,4 +1,4 @@
-import { ADD_COST } from '../Actions/actions_types/index'
+import { ADD_COST, DELETE_COST } from '../Actions/actions_types/index'
 const initailState = {
     costs: []
 }

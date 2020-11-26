@@ -2,10 +2,15 @@ import React from 'react'
 import { Wrapper, Table, DeleteBtn } from '../../Helpers/Styles/CostsComponent/CostsList'
 import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
 import app from '../../base'
-
+import { useDispatch } from "react-redux";
+import { DeleteCost } from "../../Actions/CostsActions";
 
 export const CostsList = () => {
     const [costs, setCost] = React.useState([])
+    const dispatch = useDispatch();
+    const createDeleteCostAction = (id) => dispatch(DeleteCost(id));
+
+
     React.useEffect(() => {
         const fetchData = async () => {
             const db = app.firestore();
@@ -14,12 +19,12 @@ export const CostsList = () => {
         };
         fetchData();
     }, []);
+    const deleteItem = async (e) => {
+        e.preventDefault()
+        let id =
+            e.target.getAttribute("data-id")
+        await createDeleteCostAction(id)
 
-    function deleteItem(e) {
-        app.firestore()
-            .collection('costs')
-            .doc(e.target.getAttribute("data-id"))
-            .delete()
 
     }
 
