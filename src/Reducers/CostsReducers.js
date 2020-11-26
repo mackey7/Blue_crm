@@ -1,4 +1,4 @@
-import { ADD_COST, DELETE_COST } from '../Actions/actions_types/index'
+import { ADD_COST, DELETE_COST, FETCH_COSTS } from '../Actions/actions_types/index'
 const initailState = {
     costs: []
 }
@@ -9,6 +9,8 @@ export const CostsReducer = (state = initailState, actions) => {
             return { ...state, costs: actions.payload }
             break
         case DELETE_COST:
+            return { ...state, costs: actions.payload }
+        case FETCH_COSTS:
             return { ...state, costs: actions.payload }
         default:
             return state
