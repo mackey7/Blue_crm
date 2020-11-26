@@ -6,9 +6,10 @@ const initailState = {
 export const CostsReducer = (state = initailState, actions) => {
     switch (actions.type) {
         case ADD_COST:
-            return { costs: actions.payload }
+            return { ...state, costs: actions.payload }
             break
-
+        case DELETE_COST:
+            return { ...state, costs: actions.payload }
         default:
             return state
     }
