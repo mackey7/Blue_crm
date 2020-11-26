@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { ComponentWrapper, FormWrapper, Col, AddBtn } from '../../Helpers/Styles/ClientsComponent/AddClient'
+import { useDispatch } from "react-redux";
+import { AddClient } from "../../Actions/ClientsActions";
 import app from '../../base'
 
-export const AddClient = () => {
+export const AddClientComponent = () => {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [email, setEmail] = useState('')
@@ -10,22 +12,22 @@ export const AddClient = () => {
     const [zipCode, setZipCode] = useState('')
     const [city, setCity] = useState('')
 
-    function onSubmit(e) {
-        e.preventDefault()
+    const dispatch = useDispatch();
+    const createClientAction = (client) => dispatch(AddClient(client));
 
-        app.firestore()
-            .collection('clients')
-            .add({
-                name, surname, email, street, zipCode, city
-            })
-            .then(() => {
-                setName('')
-                setSurname('')
-                setEmail('')
-                setStreet('')
-                setZipCode('')
-                setCity('')
-            })
+    const onSubmit = async (e) => {
+        e.preventDefault()
+        let client = {
+            name, surname, email, street, zipCode, city
+        }
+        await createClientAction(client)
+        setName('')
+        setSurname('')
+        setEmail('')
+        setStreet('')
+        setZipCode('')
+        setCity('')
+
     }
 
     return (

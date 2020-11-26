@@ -1,10 +1,10 @@
 import React from 'react'
-import { AddClient } from './AddClient'
+import { AddClientComponent } from './AddClient'
 import { ClientsList } from './ClientsList'
 export const ClientsComponent = () => {
     return (
         <div>
-            < AddClient />
+            < AddClientComponent />
             <ClientsList />
         </div>
     )
