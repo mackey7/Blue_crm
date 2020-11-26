@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
 import { Wrapper, Form } from '../../Helpers/Styles/CostsComponent/AddCost'
-import app from '../../base'
+import { useDispatch } from "react-redux";
+import { AddCost } from "../../Actions/CostsActions";
 
-export const AddCost = () => {
+export const AddCostComponent = () => {
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
     const [amount, setAmount] = useState('')
+    const dispatch = useDispatch();
+    const createCostAction = (cost) => dispatch(AddCost(cost));
 
 
-
-    function onSubmit(e) {
+    const onSubmit = async (e) => {
         e.preventDefault()
-        app
-            .firestore()
-            .collection('costs')
-            .add({
-                name,
-                category,
-                amount
-            })
-            .then(() => {
-                setName("")
-                setAmount("")
-                setCategory("")
-            })
+        let cost = {
+            name, category, amount
+        }
+        await createCostAction(cost)
+        setName("")
+        setAmount("")
+        setCategory("")
+
     }
     return (
         <Wrapper>
