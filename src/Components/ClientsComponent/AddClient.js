@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { ComponentWrapper, FormWrapper, Col, AddBtn } from '../../Helpers/Styles/ClientsComponent/AddClient'
 import { useDispatch } from "react-redux";
 import { AddClient } from "../../Actions/ClientsActions";
-import app from '../../base'
 
 export const AddClientComponent = () => {
     const [name, setName] = useState('')

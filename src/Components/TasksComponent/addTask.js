@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { AddTask } from "../../Actions/TasksActions";
 import { ContainerWrapper, Form, AddBtn } from '../../Helpers/Styles/TasksComponent/addTask'
-// import app from '../../base'
+
 export const AddTaskComponent = () => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -16,18 +16,9 @@ export const AddTaskComponent = () => {
             title, description, isDone: false
         }
         await createTaskAction(task)
-        // app
-        //     .firestore()
-        //     .collection('tasks')
-        //     .add({
-        //         title,
-        //         description,
-        //         isDone: false
-        //     })
-        //     .then(() => {
-        //         setTitle('')
-        //         setDescription('')
-        //     })
+        setTitle('')
+        setDescription('')
+
     }
 
     return (
