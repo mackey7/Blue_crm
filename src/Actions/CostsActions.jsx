@@ -27,14 +27,12 @@ export const DeleteCost = (id) => {
 
 export const FetchCosts = () => {
     return async function (dispatch) {
-        const firestoreCost = await app
+        const data = await app
             .firestore()
             .collection('costs')
             .get()
-            .catch(err => {
-                console.log(err);
-            });
-        dispatch({ type: FETCH_COSTS, payload: firestoreCost });
+
+        dispatch({ type: FETCH_COSTS, payload: data });
 
     }
 }
