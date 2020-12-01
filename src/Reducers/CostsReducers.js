@@ -6,14 +6,13 @@ const initailState = {
 export const CostsReducer = (state = initailState, actions) => {
     switch (actions.type) {
         case ADD_COST:
-            return { ...state, costs: actions.payload }
+            return { ...state, costs: [...state.costs, actions.payload] }
             break
         case DELETE_COST:
             return { ...state, costs: actions.payload }
         case FETCH_COSTS:
-            const a = { ...state, costs: actions.payload }
-            console.log(actions.payload)
-            return a
+
+            return { costs: actions.payload }
 
         default:
             return state
