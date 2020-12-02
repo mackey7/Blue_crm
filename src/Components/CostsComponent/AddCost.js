@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Wrapper, Form } from '../../Helpers/Styles/CostsComponent/AddCost'
 import { useDispatch } from "react-redux";
-import { AddCost } from "../../Actions/CostsActions";
+import { AddCost, FetchCosts } from "../../Actions/CostsActions";
 
 export const AddCostComponent = () => {
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
-    const [amount, setAmount] = useState('')
+    const [amount, setAmount] = useState("")
     const dispatch = useDispatch();
     const createCostAction = (cost) => dispatch(AddCost(cost));
 
@@ -20,7 +20,7 @@ export const AddCostComponent = () => {
         setName("")
         setAmount("")
         setCategory("")
-
+        await dispatch(FetchCosts())
     }
     return (
         <Wrapper>

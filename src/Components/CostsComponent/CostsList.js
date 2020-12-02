@@ -21,14 +21,15 @@ export const CostsList = () => {
     const deleteItem = async (e) => {
         e.preventDefault()
         let id =
-            e.target.getAttribute("data-id")
-        await createDeleteCostAction(id)
+            e.target.getAttribute("data-id");
+        await createDeleteCostAction(id);
+        await dispatch(FetchCosts());
     }
 
 
     const mapCost = costs.map(cost => (
         <tr>
-            <td >{cost.name}</td> <td>{cost.category}</td>  <td>{cost.Amount}</td> <td> <DeleteBtn onClick={e => deleteItem(e)} data-id={cost.id} className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
+            <td >{cost.name}</td> <td>{cost.category}</td>  <td>{cost.amount}</td> <td> <DeleteBtn onClick={e => deleteItem(e)} data-id={cost.id} className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
         </tr>
 
     ))

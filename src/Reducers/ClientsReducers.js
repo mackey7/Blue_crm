@@ -5,23 +5,9 @@ const initailState = {
 
 export const ClientsReducer = (state = initailState, actions) => {
     switch (actions.type) {
-        // case ADD_CLIENT:
-        //     const c = { ...state, clients: [...state.clients, actions.payload] }
-        //     console.log(actions.payload)
-        //     return c
-        //     break
         case FETCH_CLIENTS:
-
-            const a = { clients: actions.payload }
-            // console.log(actions.payload)
-            return a
+            return { clients: actions.payload }
             break
-        // case DELETE_CLIENT:
-
-        //     const b = { ...state, clients: actions.payload }
-        //     // console.log(actions.payload)
-        //     return b
-        //     break
         default:
             return state
     }
