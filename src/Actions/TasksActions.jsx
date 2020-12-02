@@ -5,10 +5,22 @@ import app from '../base'
 
 export const AddTask = (task) => {
     return async function (dispatch) {
-        const firestoreTask = await app.firestore().collection("tasks").add(task).catch(err => {
+        await app.firestore().collection("tasks").add(task).catch(err => {
             console.log(err);
         });
-        dispatch({ type: ADD_TASK, payload: firestoreTask });
+
     }
 }
 
+export const DeleteTask = (id) => {
+    return async function (dispatch) {
+        await app.firestore()
+            .collection('tasks')
+            .doc(id)
+            .delete().catch(err => {
+                console.log(err);
+            });
+
+
+    }
+}

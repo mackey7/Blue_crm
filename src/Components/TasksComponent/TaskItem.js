@@ -1,28 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Wrapper, Content, DeleteBtn, Row } from '../../Helpers/Styles/TasksComponent/TaskItem'
-import app from '../../base'
-
+import { DeleteTask } from "../../Actions/TasksActions";
+import { useDispatch } from 'react-redux'
 
 export const TaskItem = taskstData => {
+    const dispatch = useDispatch();
+    const createDeleteTaskAction = (id) => dispatch(DeleteTask(id));
 
-    const [taskStatus, setTaskStatus] = useState(false)
-    // console.log(taskStatus)
-    function deleteItem(e) {
-        app.firestore()
-            .collection('tasks')
-            .doc(e.target.getAttribute("data-id"))
-            .delete()
-    }
 
-    function updateItem(e) {
-        app.
-            firestore()
-            .collection("tasks")
-            .doc(e.target.getAttribute("data-id"))
-            .update({ isDone: e.target.checked });
-
+    async function deleteItem(e) {
+        e.preventDefault()
+        let id =
+            e.target.getAttribute("data-id");
+        await createDeleteTaskAction(id);
 
     }
+
+
 
     return (
         <Wrapper isDone={taskstData.taskstData.isDone} >
