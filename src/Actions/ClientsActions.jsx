@@ -4,15 +4,16 @@ import app from '../base'
 
 export const AddClient = (client) => {
     return async function (dispatch) {
-        const firestoreClient = await app.firestore().collection("clients").add(client).catch(err => {
-            console.log(err);
-        });
-        dispatch({ type: ADD_CLIENT, payload: firestoreClient });
+        await app.firestore()
+            .collection("clients")
+            .add(client)
+            .catch(err => {
+                console.log(err);
+            });
     }
 }
 
 export const FetchClients = () => {
-
     return async function (dispatch) {
         const firebaseData = await app
             .firestore()
@@ -32,13 +33,11 @@ export const FetchClients = () => {
 
 export const DeleteClient = (id) => {
     return async function (dispatch) {
-        const firestoreClient = await app.firestore()
+        await app.firestore()
             .collection('clients')
             .doc(id)
             .delete().catch(err => {
                 console.log(err);
             });
-        dispatch({ type: DELETE_CLIENT, payload: firestoreClient });
-
     }
 }

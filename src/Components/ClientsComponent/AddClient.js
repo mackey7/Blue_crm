@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ComponentWrapper, FormWrapper, Col, AddBtn } from '../../Helpers/Styles/ClientsComponent/AddClient'
 import { useDispatch } from "react-redux";
-import { AddClient } from "../../Actions/ClientsActions";
+import { AddClient, FetchClients } from "../../Actions/ClientsActions";
+
 
 export const AddClientComponent = () => {
     const [name, setName] = useState('')
@@ -26,7 +27,7 @@ export const AddClientComponent = () => {
         setStreet('')
         setZipCode('')
         setCity('')
-
+        await dispatch(FetchClients());
     }
 
     return (

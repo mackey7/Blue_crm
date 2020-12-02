@@ -1,13 +1,20 @@
 import React from 'react'
 import { DeleteBtn } from '../../Helpers/Styles/ClientsComponent/ClientItem'
-import app from '../../base'
+import { DeleteClient, FetchClients } from '../../Actions/ClientsActions'
+import { useDispatch } from 'react-redux'
 
 export const ClientItem = clientData => {
-    function deleteItem(e) {
-        app.firestore()
-            .collection('clients')
-            .doc(e.target.getAttribute("data-id"))
-            .delete()
+    const dispatch = useDispatch();
+    const createDeleteClientAction = (id) => dispatch(DeleteClient(id));
+
+    async function deleteItem(e) {
+        e.preventDefault()
+        let id =
+            e.target.getAttribute("data-id")
+        console.log(createDeleteClientAction(id))
+        await createDeleteClientAction(id)
+        await dispatch(FetchClients());
+
     }
     return (
 
