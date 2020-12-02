@@ -10,10 +10,10 @@ export const CostsReducer = (state = initailState, actions) => {
             break
         case DELETE_COST:
             return { ...state, costs: actions.payload }
+            break
         case FETCH_COSTS:
-
             return { costs: actions.payload }
-
+            break
         default:
             return state
     }
