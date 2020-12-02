@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper, Content, DeleteBtn, Row } from '../../Helpers/Styles/TasksComponent/TaskItem'
-import { DeleteTask } from "../../Actions/TasksActions";
+import { DeleteTask, FetchTasks } from "../../Actions/TasksActions";
 import { useDispatch } from 'react-redux'
 
 export const TaskItem = taskstData => {
@@ -13,7 +13,7 @@ export const TaskItem = taskstData => {
         let id =
             e.target.getAttribute("data-id");
         await createDeleteTaskAction(id);
-
+        await dispatch(FetchTasks())
     }
 
 
@@ -21,7 +21,7 @@ export const TaskItem = taskstData => {
     return (
         <Wrapper isDone={taskstData.taskstData.isDone} >
             <Row>
-                <input data-id={taskstData.taskstData.id} type="checkbox" onChange={e => updateItem(e)} />
+                <input data-id={taskstData.taskstData.id} type="checkbox" />
                 <Content>
                     <h4>{taskstData.taskstData.title}</h4>
                     <p>{taskstData.taskstData.description}</p>

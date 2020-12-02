@@ -1,4 +1,4 @@
-import { ADD_CLIENT, FETCH_CLIENTS, DELETE_CLIENT } from './actions_types/index'
+import { FETCH_CLIENTS } from './actions_types/index'
 import app from '../base'
 
 

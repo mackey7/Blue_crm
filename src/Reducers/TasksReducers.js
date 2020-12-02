@@ -1,12 +1,12 @@
-import { ADD_TASK } from '../Actions/actions_types/index'
+import { FETCH_TASKS } from '../Actions/actions_types/index'
 const initailState = {
-    posts: []
+    tasks: []
 }
 
 export const TasksReducer = (state = initailState, actions) => {
     switch (actions.type) {
-        case ADD_TASK:
-            return { posts: actions.payload }
+        case FETCH_TASKS:
+            return { tasks: actions.payload }
             break
 
         default:

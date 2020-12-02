@@ -1,2 +1,3 @@
 export const FETCH_COSTS = "FETCH_COSTS"
 export const FETCH_CLIENTS = "FETCH_CLIENTS"
+export const FETCH_TASKS = "FETCH_TASKS"

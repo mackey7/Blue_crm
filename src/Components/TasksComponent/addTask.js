@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
-import { AddTask } from "../../Actions/TasksActions";
+import { AddTask, FetchTasks } from "../../Actions/TasksActions";
 import { ContainerWrapper, Form, AddBtn } from '../../Helpers/Styles/TasksComponent/addTask'
 
 export const AddTaskComponent = () => {
@@ -8,7 +8,7 @@ export const AddTaskComponent = () => {
     const [description, setDescription] = useState("")
 
     const dispatch = useDispatch();
-    const createTaskAction = (post) => dispatch(AddTask(post));
+    const createTaskAction = (task) => dispatch(AddTask(task));
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -18,7 +18,7 @@ export const AddTaskComponent = () => {
         await createTaskAction(task)
         setTitle('')
         setDescription('')
-
+        await dispatch(FetchTasks());
     }
 
     return (

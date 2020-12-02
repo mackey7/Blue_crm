@@ -1,4 +1,4 @@
-import { ADD_TASK } from './actions_types/index'
+import { FETCH_TASKS } from './actions_types/index'
 import app from '../base'
 
 
@@ -24,3 +24,25 @@ export const DeleteTask = (id) => {
 
     }
 }
+
+export const FetchTasks = () => {
+    return async function (dispatch) {
+        const data = await app
+            .firestore()
+            .collection('tasks')
+            .get().then(function (querySnapshot) {
+                const costs = [];
+
+                querySnapshot.forEach(function (doc) {
+                    const cost = { ...doc.data(), id: doc.id };
+                    costs.push(cost);
+                });
+
+                return costs;
+            });
+
+        dispatch({ type: FETCH_TASKS, payload: data });
+
+    }
+}
+

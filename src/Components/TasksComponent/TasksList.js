@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { TaskItem } from './TaskItem'
 import { Wrapper } from '../../Helpers/Styles/TasksComponent/TasksList'
 import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
-import app from '../../base'
-
-
+import { useDispatch, useSelector } from 'react-redux'
+import { FetchTasks } from "../../Actions/TasksActions";
 
 
 export const TasksList = () => {
-    const [tasks, setTask] = useState([])
+    const dispatch = useDispatch();
+    const tasks = useSelector((state) => state.tasks.tasks);
     useEffect(() => {
         const fetchData = async () => {
-            const db = app.firestore();
-            const data = await db.collection("tasks").get();
-            setTask(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+            await dispatch(FetchTasks());
         };
         fetchData();
     }, []);
+
     const mapTasks = tasks.map(task => (
         <TaskItem key={task.id} taskstData={task} />
     ))
