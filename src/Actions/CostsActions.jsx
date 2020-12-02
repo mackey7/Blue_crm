@@ -37,7 +37,7 @@ export const FetchCosts = () => {
                     const cost = { ...doc.data(), id: doc.id };
                     costs.push(cost);
                 });
-                console.log(costs)
+
                 return costs;
             });
 
