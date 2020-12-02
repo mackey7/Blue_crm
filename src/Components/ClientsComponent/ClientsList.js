@@ -2,19 +2,21 @@ import React from 'react'
 import { Wrapper, Table } from '../../Helpers/Styles/ClientsComponent/ClientsList'
 import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
 import { ClientItem } from './ClientItem'
-import app from '../../base'
+import { useDispatch, useSelector } from 'react-redux'
+import { FetchClients } from '../../Actions/ClientsActions'
 
 
 export const ClientsList = () => {
-    const [clients, setClient] = React.useState([])
+    const dispatch = useDispatch();
+    const clients = useSelector((state) => state.clients.clients);
+
     React.useEffect(() => {
-        const fetchData = async () => {
-            const db = app.firestore();
-            const data = await db.collection("clients").get();
-            setClient(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
-        };
-        fetchData();
+        async function fetchData() {
+            await dispatch(FetchClients());
+        }
+        fetchData()
     }, []);
+
     const clientsMap = clients.map(client => (
         <p><ClientItem key={client.id} clientData={client} /></p>
     ))
