@@ -1,4 +1,4 @@
-import { ADD_CLIENT, FETCH_CLIENTS } from './actions_types/index'
+import { ADD_CLIENT, FETCH_CLIENTS, DELETE_CLIENT } from './actions_types/index'
 import app from '../base'
 
 
@@ -27,5 +27,18 @@ export const FetchClients = () => {
                 return _tempData
             })
         dispatch({ type: FETCH_CLIENTS, payload: firebaseData })
+    }
+}
+
+export const DeleteClient = (id) => {
+    return async function (dispatch) {
+        const firestoreClient = await app.firestore()
+            .collection('clients')
+            .doc(id)
+            .delete().catch(err => {
+                console.log(err);
+            });
+        dispatch({ type: DELETE_CLIENT, payload: firestoreClient });
+
     }
 }
