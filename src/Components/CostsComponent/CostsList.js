@@ -1,23 +1,21 @@
 import React from 'react'
 import { Wrapper, Table, DeleteBtn } from '../../Helpers/Styles/CostsComponent/CostsList'
 import { CenterRow } from '../../Helpers/Styles/Helpers/Helpers'
-
-
 import { DeleteCost, FetchCosts } from "../../Actions/CostsActions";
-
 import { useDispatch, useSelector } from 'react-redux'
 
 
 export const CostsList = () => {
     const dispatch = useDispatch();
     const createDeleteCostAction = (id) => dispatch(DeleteCost(id));
-    const createFetchCostAction = () => dispatch(FetchCosts());
-
     const costs = useSelector((state) => state.costs.costs);
 
     React.useEffect(() => {
-        createFetchCostAction()
-    });
+        async function fetchData() {
+            await dispatch(FetchCosts());
+        }
+        fetchData()
+    }, []);
 
 
     const deleteItem = async (e) => {
@@ -31,7 +29,6 @@ export const CostsList = () => {
     const mapCost = costs.map(cost => (
         <tr>
             <td >{cost.name}</td> <td>{cost.category}</td>  <td>{cost.Amount}</td> <td> <DeleteBtn onClick={e => deleteItem(e)} data-id={cost.id} className="fa fa-trash" aria-hidden="true"></DeleteBtn></td>
-
         </tr>
 
     ))
@@ -49,9 +46,6 @@ export const CostsList = () => {
                     {renderCondidtion}
                 </tbody>
             </Table>
-
-
-
         </Wrapper>
     )
 }

@@ -27,34 +27,22 @@ export const DeleteCost = (id) => {
 
 export const FetchCosts = () => {
     return async function (dispatch) {
-
-        await app
+        const data = await app
             .firestore()
             .collection('costs')
-            .get()
-            .then(snapshot => {
-                if (snapshot.empty) {
-                    console.log('No matching documents.');
-                    return;
-                }
-                snapshot.forEach(doc => {
-                    const vals = doc.data()
-                    let _records = [];
-                    for (var key in vals) {
-                        _records.push({
-                            ...vals[key],
-                            id: key
-                        });
-                    }
-                    dispatch({ type: FETCH_COSTS, payload: _records });
+            .get().then(function (querySnapshot) {
+                const costs = [];
+
+                querySnapshot.forEach(function (doc) {
+                    const cost = { ...doc.data(), id: doc.id };
+                    costs.push(cost);
                 });
-            })
-            .catch(err => {
-                console.log('Error getting documents', err);
+                console.log(costs)
+                return costs;
             });
 
+        dispatch({ type: FETCH_COSTS, payload: data });
 
     }
-
 }
 
